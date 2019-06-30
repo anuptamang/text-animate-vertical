@@ -1,0 +1,368 @@
+/* custom checkbox styles */
+
+.jcf-checkbox {
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+    background: #e6e6e6;
+    border-radius: 3px;
+    margin: 0 15px 0 0;
+    height: 18px;
+    width: 18px;
+}
+
+.jcf-checkbox span {
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 3px;
+    background:#80d689;
+}
+
+
+.jcf-checkbox input[type="checkbox"] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    margin: 0;
+    left: 0;
+    top: 0;
+    z-index: 2;
+}
+
+.jcf-checkbox.jcf-checked span {
+    display: block;
+}
+
+/* custom radio styles */
+
+.jcf-radio {
+    vertical-align: middle;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+    background: #fff;
+    border: 1px solid #777;
+    border-radius: 9px;
+    margin: 0 3px 0 0;
+    height: 16px;
+    width: 16px;
+}
+
+.jcf-radio span {
+    display: none;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 3px;
+    background: #777;
+    border-radius: 100%;
+}
+
+.jcf-radio input[type="radio"] {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    border: 0;
+    margin: 0;
+    left: 0;
+    top: 0;
+    z-index: 2;
+}
+
+.jcf-radio.jcf-checked span {
+    display: block;
+}
+
+/* custom select styles */
+
+.jcf-select {
+    display: block;
+    width: 100%;
+    position: relative;
+    background: #f3f3f3;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.jcf-select select {
+    z-index: 1;
+    left: 0;
+    top: 0;
+}
+
+.jcf-select .jcf-select-text {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: default;
+    display: block;
+    font-size: 14px;
+    line-height: 46px;
+    margin: 0 35px 0 10px;
+    color: $gray;
+    font-weight: 700;
+
+    @include media-breakpoint-up(md) {
+        margin-left: 20px;
+    }
+}
+
+.jcf-select .jcf-select-opener {
+    position: absolute;
+    text-align: center;
+    background: #f3f3f3;
+    width: 30px;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    border-radius: 0 10px 10px 0;
+
+    &:after {
+        @extend %icomoon;
+        content: "\e90a";
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%) rotate(90deg);
+        font-weight: normal;
+        font-size: 12px;
+
+        @include media-breakpoint-up(md) {
+            right: 20px;
+        }
+    }
+}
+
+body>.jcf-select-drop {
+    position: absolute;
+    margin: -1px 0 0;
+    z-index: 9999;
+}
+
+body>.jcf-select-drop.jcf-drop-flipped {
+    margin: 1px 0 0;
+}
+
+.jcf-select .jcf-select-drop {
+    position: absolute;
+    margin-top: 0px;
+    z-index: 9999;
+    top: 100%;
+    left: -1px;
+    right: -1px;
+    border-radius: 10px;
+}
+
+.jcf-select .jcf-drop-flipped {
+    bottom: 100%;
+    top: auto;
+}
+
+.jcf-select-drop .jcf-select-drop-content {
+    border: 1px solid $gray;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* multiple select styles */
+
+.jcf-list-box {
+    overflow: hidden;
+    display: inline-block;
+    border: 1px solid #b8c3c9;
+    min-width: 200px;
+    margin: 0 15px;
+}
+
+/* select options styles */
+
+.jcf-list {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    background: #fff;
+    line-height: 14px;
+    font-size: 12px;
+    width: 100%;
+}
+
+.jcf-list .jcf-list-content {
+    vertical-align: top;
+    display: inline-block;
+    overflow: auto;
+    width: 100%;
+}
+
+.jcf-list ul {
+    @extend .list-unstyled;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.jcf-list ul li {
+    overflow: hidden;
+    display: block;
+}
+
+.jcf-list .jcf-overflow {
+    overflow: auto;
+}
+
+.jcf-list .jcf-option {
+    overflow: hidden;
+    cursor: default;
+    display: block;
+    padding: 5px 10px;
+    color: #656565;
+    height: 1%;
+
+    @include media-breakpoint-up(md) {
+        padding: 8px 20px;
+    }
+}
+
+.jcf-list .jcf-disabled {
+    background: #fff !important;
+    color: #aaa !important;
+}
+
+.jcf-select-drop .jcf-hover,
+.jcf-list-box .jcf-selected {
+    background: #e6e6e6;
+    color: #000;
+}
+
+.jcf-list .jcf-optgroup-caption {
+    white-space: nowrap;
+    font-weight: bold;
+    display: block;
+    padding: 5px 9px;
+    cursor: default;
+    color: #000;
+}
+
+.jcf-list .jcf-optgroup .jcf-option {
+    padding-left: 30px;
+}
+
+
+/* custom scrollbars styles */
+
+.jcf-scrollable {
+    max-height: 700px;
+    height: 100% !important;
+    overflow-x: hidden !important;
+    width: 100% !important;
+}
+
+.jcf-scrollable-wrapper {
+    position: relative;
+    width: 100% !important;
+}
+
+.jcf-scrollbar-vertical {
+    position: absolute;
+    cursor: default;
+    width: 5px;
+    bottom: 0;
+    right: -10px;
+    top: 0;
+    height: 100% !important;
+}
+
+.jcf-scrollbar-vertical .jcf-scrollbar-dec,
+.jcf-scrollbar-vertical .jcf-scrollbar-inc {
+    background: #bbb;
+    height: 14px;
+    width: 14px;
+    left: 0;
+    top: 0;
+    display: none !important;
+}
+
+.jcf-scrollbar-vertical .jcf-scrollbar-inc {
+    top: auto;
+    bottom: 0;
+}
+
+.jcf-scrollbar-vertical .jcf-scrollbar-handle {
+    background: rgba(#d2d2d2,1);
+    height: 1px;
+    width: 6px;
+    border-radius: 3px;
+}
+
+.jcf-scrollbar-vertical .jcf-scrollbar-slider {
+    height: 100% !important;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 2px;
+    background: #fff;
+}
+
+.jcf-scrollbar-horizontal {
+    position: absolute;
+    background: #e3e3e3;
+    right: auto;
+    top: auto;
+    left: 0;
+    bottom: 0;
+    width: 1px;
+    height: 14px;
+    display: none !important;
+}
+
+.jcf-scrollbar-horizontal .jcf-scrollbar-dec,
+.jcf-scrollbar-horizontal .jcf-scrollbar-inc {
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+    background: #bbb;
+    height: 14px;
+    width: 14px;
+}
+
+.jcf-scrollbar-horizontal .jcf-scrollbar-inc {
+    left: auto;
+    right: 0;
+}
+
+.jcf-scrollbar-horizontal .jcf-scrollbar-slider {
+    display: inline-block;
+    position: relative;
+    height: 14px;
+}
+
+.jcf-scrollbar-horizontal .jcf-scrollbar-handle {
+    position: absolute;
+    background: #888;
+    height: 14px;
+}
+
+.jcf-scrollbar.jcf-inactive .jcf-scrollbar-handle {
+    visibility: hidden;
+}
+
+.jcf-scrollbar.jcf-inactive .jcf-scrollbar-dec,
+.jcf-scrollbar.jcf-inactive .jcf-scrollbar-inc {
+    background: #e3e3e3;
+}
+
+/* common custom form elements styles */
+
+.jcf-disabled {
+    background: #ddd !important;
+}
